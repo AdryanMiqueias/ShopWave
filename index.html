@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopWave — Loja Virtual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="#">SHOP<span>WAVE</span></a>
+      <nav class="nav-links">
+        <a href="#" class="nav-link active" data-cat="all">Todos</a>
+        <a href="#" class="nav-link" data-cat="electronics">Eletrônicos</a>
+        <a href="#" class="nav-link" data-cat="fashion">Moda</a>
+        <a href="#" class="nav-link" data-cat="home">Casa</a>
+        <a href="#" class="nav-link" data-cat="sports">Esportes</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="search-input" placeholder="Buscar produtos..." />
+        </div>
+        <button class="cart-btn" id="cart-btn">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Carrinho
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-tag">Nova Coleção 2025</p>
+      <h1 class="hero-title">ESTILO<br/><span>SEM LIMITES</span></h1>
+      <p class="hero-sub">Os melhores produtos com os melhores preços. Frete grátis acima de R$199.</p>
+      <button class="hero-cta" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Ver produtos</button>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <div class="hero-badge">🔥 Hot Sale</div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="products-header">
+      <h2 class="section-title">Produtos</h2>
+      <div class="sort-wrap">
+        <label>Ordenar:</label>
+        <select id="sort-select">
+          <option value="default">Padrão</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
+          <option value="name">Nome</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+    <div class="no-results hidden" id="no-results">
+      <p>😕 Nenhum produto encontrado.</p>
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Carrinho</h3>
+      <button class="cart-close" id="cart-close">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-empty hidden" id="cart-empty">
+        <p>🛒 Carrinho vazio</p>
+        <p class="cart-empty-sub">Adicione produtos para continuar</p>
+      </div>
+      <div id="cart-summary">
+        <div class="cart-total-line">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">R$ 0,00</span>
+        </div>
+        <div class="cart-total-line">
+          <span>Frete</span>
+          <span id="cart-frete">—</span>
+        </div>
+        <div class="cart-total-line total">
+          <span>Total</span>
+          <span id="cart-total">R$ 0,00</span>
+        </div>
+        <button class="btn-checkout" id="btn-checkout">Finalizar compra</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <footer class="footer">
+    <p>© 2025 ShopWave — Projeto de portfólio</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
