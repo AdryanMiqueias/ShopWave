@@ -113,4 +113,4 @@ state.cart → renderCart() → sidebar do carrinho
 
 ## 📄 Licença
 
-MIT © [Seu Nome]
+MIT © [Adryan Miqueias Oliveira Pereira]
